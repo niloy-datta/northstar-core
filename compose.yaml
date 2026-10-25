@@ -1,5 +1,5 @@
 services:
-  # Database Service
+  # Local database
   postgres:
     image: postgres:16-alpine
     container_name: northstar-postgres

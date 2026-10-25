@@ -20,7 +20,7 @@ html {
 
 body {
   margin: 0;
-  background: radial-gradient(ellipse 65% 25% at 90% 0%, #e1f8f1 0%, transparent 75%), #f3f7fb;
+  background: #f3f7fb;
   color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -52,7 +52,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 .sidebar {
   width: 264px;
   flex: none;
-  background: linear-gradient(165deg, #0c2440 0%, #08192f 65%, #061425 100%);
+  background: #0b1930;
   border-right: 1px solid #1a3a4f;
   color: #dbe8f8;
   padding: 28px 16px 20px;
@@ -77,7 +77,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   display: grid;
   place-items: center;
   border-radius: 12px;
-  background: linear-gradient(140deg, #5cf6cd, #0da58f);
+  background: #46e0b9;
   box-shadow: 0 10px 38px #04bc9b42;
   font-weight: 900;
   font-size: 22px;
@@ -165,7 +165,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 
 .nav-item:hover, .nav-item.selected {
   color: white;
-  background: linear-gradient(90deg, #164b55, #173b52);
+  background: #173b52;
   border-color: #2c706a;
   box-shadow: inset 3px 0 #43e9bb;
 }
@@ -311,7 +311,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   position: relative;
   min-height: 240px;
   border-radius: 18px;
-  background: radial-gradient(ellipse at 91% 11%, #176880 0%, transparent 40%), linear-gradient(118deg, #102644 0%, #12355d 58%, #115260 100%);
+  background: linear-gradient(120deg, #102644, #115260);
   box-shadow: 0 16px 45px #183c5c20;
   margin-bottom: 28px;
 }
@@ -441,7 +441,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   right: 24px;
   bottom: 0;
   height: 2px;
-  background: linear-gradient(90deg, #46dcb7, transparent);
+  background: #46dcb7;
 }
 
 .metric-head {
@@ -569,7 +569,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 
 .progress-track span {
   display: block;
-  background: linear-gradient(90deg, #21b99b, #6ce4b8);
+  background: #21b99b;
   height: 100%;
   border-radius: inherit;
 }
@@ -660,7 +660,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 }
 
 .directory-stats {
-  background: linear-gradient(110deg, #fff, #f5fcf9);
+  background: #fff;
   border: 1px solid #e0eee9;
   border-radius: 12px;
   padding: 16px 20px;
@@ -875,7 +875,7 @@ td:last-child, th:last-child {
   height: 60px;
   margin: 0 auto 16px;
   border-radius: 16px;
-  background: linear-gradient(145deg, #e6f8f1, #f2f8fc);
+  background: #e6f8f1;
   display: grid;
   place-items: center;
   color: #159982;

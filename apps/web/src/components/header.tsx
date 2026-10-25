@@ -1,5 +1,4 @@
-import React from "react";
-import { ViewType } from "@/types/supplier";
+import type { ViewType } from "@/types/supplier";
 
 interface HeaderProps {
   currentView: ViewType;
@@ -11,11 +10,11 @@ export function Header({ currentView }: HeaderProps) {
   return (
     <header className="topbar">
       <div className="breadcrumb">
-        SHL Operations <span>/</span> <strong>{title}</strong>
+        SHL Business System <span>/</span> <strong>{title}</strong>
       </div>
       <div className="topbar-end">
         <span className="topbar-tag">
-          <span className="status-dot" /> Internal workspace
+          <span className="status-dot" /> Demo workspace
         </span>
         <div className="topbar-avatar">A</div>
       </div>

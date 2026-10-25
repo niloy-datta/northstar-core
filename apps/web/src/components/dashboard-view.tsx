@@ -1,6 +1,5 @@
-import React from "react";
 import { Icon } from "./icons";
-import { SummaryStats, ViewType } from "@/types/supplier";
+import type { SummaryStats, ViewType } from "@/types/supplier";
 
 interface DashboardViewProps {
   stats: SummaryStats;
@@ -13,14 +12,14 @@ export function DashboardView({ stats, onNavigate }: DashboardViewProps) {
       <section className="welcome-hero">
         <div className="hero-content">
           <p className="hero-kicker">
-            <span className="hero-kicker-line" /> SHL INTERNATIONAL · OPERATIONS CONTROL
+            <span className="hero-kicker-line" /> SHL INTERNATIONAL · BUSINESS SYSTEM
           </p>
           <h1>
-            One workspace.<br />
-            <span>Every connection.</span>
+            Manage suppliers.<br />
+            <span>Track orders.</span>
           </h1>
           <p className="hero-desc">
-            Organize suppliers, streamline orders, and monitor global operations from a single command center.
+            Keep supplier details, orders, and daily work organized in one place.
           </p>
           <div className="hero-buttons">
             <button
@@ -28,7 +27,7 @@ export function DashboardView({ stats, onNavigate }: DashboardViewProps) {
               className="hero-button"
               onClick={() => onNavigate("suppliers")}
             >
-              Explore Supplier Directory <Icon name="arrow" size={16} />
+              View Suppliers <Icon name="arrow" size={16} />
             </button>
           </div>
         </div>
@@ -36,8 +35,8 @@ export function DashboardView({ stats, onNavigate }: DashboardViewProps) {
 
       <div className="section-head">
         <div>
-          <p className="section-overline">KEY PERFORMANCE INDICATORS</p>
-          <h2>At a glance</h2>
+          <p className="section-overline">DASHBOARD</p>
+          <h2>Overview</h2>
         </div>
       </div>
 
@@ -51,7 +50,7 @@ export function DashboardView({ stats, onNavigate }: DashboardViewProps) {
           </div>
           <strong>{stats.activeSuppliers}</strong>
           <div className="metric-footer">
-            <span className="metric-foot-dot" /> Verified partner network
+            <span className="metric-foot-dot" /> Supplier contacts
           </div>
         </article>
 
@@ -64,7 +63,7 @@ export function DashboardView({ stats, onNavigate }: DashboardViewProps) {
           </div>
           <strong>{stats.openOrders}</strong>
           <div className="metric-footer">
-            <span className="metric-foot-dot" /> Under active fulfillment
+            <span className="metric-foot-dot" /> Orders being processed
           </div>
         </article>
 
@@ -77,7 +76,7 @@ export function DashboardView({ stats, onNavigate }: DashboardViewProps) {
           </div>
           <strong>{stats.networkSpend}</strong>
           <div className="metric-footer">
-            <span className="metric-foot-dot" /> YTD total traded volume
+            <span className="metric-foot-dot" /> Sample order value
           </div>
         </article>
       </div>
@@ -86,8 +85,8 @@ export function DashboardView({ stats, onNavigate }: DashboardViewProps) {
         <section className="surface mix-panel">
           <div className="surface-top">
             <div>
-              <p className="section-overline">NETWORK INTEGRITY</p>
-              <h2>Partner distribution</h2>
+              <p className="section-overline">SUPPLIER STATUS</p>
+              <h2>Supplier performance</h2>
             </div>
             <span className="quiet-tag">STATUS</span>
           </div>
@@ -123,7 +122,7 @@ export function DashboardView({ stats, onNavigate }: DashboardViewProps) {
           </div>
 
           <p className="surface-note">
-            Continuous supplier evaluation based on delivery reliability, quality compliance, and response latency.
+            A quick look at supplier status and delivery progress.
           </p>
         </section>
 
@@ -131,7 +130,7 @@ export function DashboardView({ stats, onNavigate }: DashboardViewProps) {
           <div className="surface-top">
             <div>
               <p className="section-overline">QUICK ACTIONS</p>
-              <h2>Direct operations</h2>
+              <h2>Quick links</h2>
             </div>
           </div>
 
@@ -145,7 +144,7 @@ export function DashboardView({ stats, onNavigate }: DashboardViewProps) {
             </div>
             <div>
               <strong>Supplier Directory</strong>
-              <small>Search and browse all verified partners</small>
+              <small>Find supplier contact details</small>
             </div>
             <Icon name="arrow" size={17} />
           </button>
@@ -156,7 +155,7 @@ export function DashboardView({ stats, onNavigate }: DashboardViewProps) {
             </div>
             <div>
               <strong>Procurement Orders</strong>
-              <small>Review current delivery batches and timelines</small>
+              <small>Review orders and delivery dates</small>
             </div>
             <Icon name="arrow" size={17} />
           </div>
@@ -164,7 +163,7 @@ export function DashboardView({ stats, onNavigate }: DashboardViewProps) {
       </div>
 
       <div className="footnote">
-        <Icon name="check" size={15} /> Demonstration environment loaded with realistic operational data.
+        <Icon name="check" size={15} /> Demo only. All numbers shown here are sample data.
       </div>
     </div>
   );

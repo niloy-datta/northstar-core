@@ -1,6 +1,6 @@
-import React, { useState, useMemo } from "react";
+import { useState } from "react";
 import { Icon } from "./icons";
-import { Supplier } from "@/types/supplier";
+import type { Supplier } from "@/types/supplier";
 
 interface SupplierDirectoryProps {
   suppliers: Supplier[];
@@ -9,30 +9,29 @@ interface SupplierDirectoryProps {
 export function SupplierDirectory({ suppliers }: SupplierDirectoryProps) {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredSuppliers = useMemo(() => {
-    const term = searchTerm.toLowerCase().trim();
-    if (!term) return suppliers;
+  const term = searchTerm.trim().toLowerCase();
+  const filteredSuppliers = suppliers.filter((supplier) => {
+    if (!term) return true;
 
-    return suppliers.filter(
-      (supplier) =>
-        supplier.name.toLowerCase().includes(term) ||
-        supplier.category.toLowerCase().includes(term) ||
-        supplier.contactPerson.toLowerCase().includes(term) ||
-        supplier.country.toLowerCase().includes(term) ||
-        supplier.email.toLowerCase().includes(term)
+    return (
+      supplier.name.toLowerCase().includes(term) ||
+      supplier.category.toLowerCase().includes(term) ||
+      supplier.contactPerson.toLowerCase().includes(term) ||
+      supplier.country.toLowerCase().includes(term) ||
+      supplier.email.toLowerCase().includes(term)
     );
-  }, [searchTerm, suppliers]);
+  });
 
   return (
     <div>
       <div className="page-heading">
         <div>
-          <p className="section-overline">RELATIONSHIP MANAGEMENT / DIRECTORY</p>
+          <p className="section-overline">SUPPLIER DIRECTORY</p>
           <h1>
             Suppliers<span className="heading-period">.</span>
           </h1>
           <p className="muted">
-            Search, evaluate, and coordinate with all verified procurement and manufacturing partners.
+            Find suppliers by name, category, contact, or country.
           </p>
         </div>
       </div>
@@ -42,16 +41,16 @@ export function SupplierDirectory({ suppliers }: SupplierDirectoryProps) {
           <Icon name="building" size={24} />
         </div>
         <div>
-          <p className="section-overline">NETWORK VOLUME</p>
+          <p className="section-overline">SUPPLIER COUNT</p>
           <strong>{suppliers.length} Registered Suppliers</strong>
         </div>
-        <span className="directory-tip">Global coverage</span>
+        <span className="directory-tip">Sample records</span>
       </div>
 
       <section className="surface directory-panel" aria-label="Suppliers directory">
         <div className="table-toolbar">
           <div>
-            <h2>Verified Suppliers</h2>
+            <h2>Supplier List</h2>
             <p className="muted">
               {filteredSuppliers.length} of {suppliers.length} suppliers displayed
             </p>
@@ -63,7 +62,7 @@ export function SupplierDirectory({ suppliers }: SupplierDirectoryProps) {
               <input
                 type="text"
                 aria-label="Search suppliers"
-                placeholder="Search by name, category, or country..."
+                placeholder="Search suppliers..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -121,13 +120,7 @@ export function SupplierDirectory({ suppliers }: SupplierDirectoryProps) {
                   <td>{supplier.country}</td>
                   <td>
                     <span
-                      className={`status-pill ${
-                        supplier.status === "Active"
-                          ? "status-active"
-                          : supplier.status === "Verified"
-                          ? "status-verified"
-                          : "status-pending"
-                      }`}
+                      className={`status-pill status-${supplier.status.toLowerCase()}`}
                     >
                       {supplier.status === "Verified" && <Icon name="check" size={12} />}
                       {supplier.status}
@@ -148,7 +141,7 @@ export function SupplierDirectory({ suppliers }: SupplierDirectoryProps) {
               </div>
               <h3>No matching suppliers found</h3>
               <p>
-                No supplier records match &quot;{searchTerm}&quot;. Try adjusting your search query.
+                No results for &quot;{searchTerm}&quot;. Try a different search.
               </p>
               <button
                 type="button"
@@ -163,7 +156,7 @@ export function SupplierDirectory({ suppliers }: SupplierDirectoryProps) {
       </section>
 
       <div className="footnote">
-        <Icon name="check" size={15} /> All supplier records operate locally in-memory for zero-latency demonstration.
+        <Icon name="check" size={15} /> Supplier details are sample data stored in this app.
       </div>
     </div>
   );

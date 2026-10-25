@@ -1,7 +1,7 @@
-import { Supplier, SummaryStats } from "@/types/supplier";
+import type { Supplier, SummaryStats } from "@/types/supplier";
 
 export const initialStats: SummaryStats = {
-  activeSuppliers: 48,
+  activeSuppliers: 5,
   openOrders: 16,
   networkSpend: "$1.24M"
 };

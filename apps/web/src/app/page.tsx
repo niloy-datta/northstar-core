@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { Sidebar } from "@/components/sidebar";
 import { Header } from "@/components/header";
 import { DashboardView } from "@/components/dashboard-view";
 import { SupplierDirectory } from "@/components/supplier-directory";
 import { mockSuppliers, initialStats } from "@/lib/mock-data";
-import { ViewType } from "@/types/supplier";
+import type { ViewType } from "@/types/supplier";
 
 export default function Home() {
   const [currentView, setCurrentView] = useState<ViewType>("dashboard");

@@ -1,6 +1,5 @@
-import React from "react";
 import { Icon } from "./icons";
-import { ViewType } from "@/types/supplier";
+import type { ViewType } from "@/types/supplier";
 
 interface SidebarProps {
   currentView: ViewType;
@@ -23,7 +22,7 @@ export function Sidebar({ currentView, onNavigate }: SidebarProps) {
       </div>
 
       <div className="workspace-pill">
-        <span className="pill-dot" /> OPERATIONS OS <span className="pill-separator">/</span> INTERNAL
+        <span className="pill-dot" /> OPERATIONS <span className="pill-separator">/</span> INTERNAL
       </div>
 
       <nav aria-label="Primary navigation">
@@ -55,7 +54,7 @@ export function Sidebar({ currentView, onNavigate }: SidebarProps) {
       <div className="sidebar-bottom">
         <div className="side-status">
           <Icon name="lock" size={15} />
-          <span>Private operations workspace</span>
+          <span>Internal workspace</span>
         </div>
         <div className="account-row">
           <div className="user-avatar">A</div>
